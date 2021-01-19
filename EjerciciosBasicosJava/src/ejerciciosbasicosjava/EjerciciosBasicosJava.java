@@ -42,7 +42,6 @@ public class EjerciciosBasicosJava {
     
     }
     
-    
     public int multa(int velocidad, boolean cumple){
         
         int multa = 0;
@@ -93,7 +92,6 @@ public class EjerciciosBasicosJava {
         }
     }
 
-    
     public boolean movil(boolean dormido, boolean madre, boolean mañana){
     
         if(dormido == false){
@@ -116,7 +114,6 @@ public class EjerciciosBasicosJava {
         return false;
     
     }
-    
     
     public boolean diff10(int a, int b, int c){
     
@@ -148,6 +145,78 @@ public class EjerciciosBasicosJava {
     
                return false;
     }
+    
+    public boolean multiplo35(int numero){
+    
+        int mul5 = numero % 5;
+        int mul3 = numero % 3;
+        
+        if(mul5 == 0 || mul3 == 0){
+        
+            return true;
+        
+        }
+    
+        return false;
+    }
+    
+    public boolean multiplo20 (int numero){
+        int multiplo20 = (numero + 1) % 20;
+        int multiplo21 = (numero + 2) % 20;
+
+        if(multiplo20 == 0 || multiplo21 == 0){
+        
+            return true;
+        
+        }
+        
+        
+            return false;
+    }
+    
+    public int loteria(int a, int b, int c){
+    
+        if( a == 2 && b == 2 && c == 2){
+        
+            return 10;
+            
+        }
+        
+        if(a == b && b == c){
+        
+            
+            return 5;
+        
+        }
+        
+        if(a != b && a != c){
+        
+            return 1;
+        
+        }
+    
+        return 0;
+    }
+    
+    public int suma(int a, int b, boolean dobles){
+    
+        int combi = a + b;
+        
+        if(dobles){
+        
+            if(a == b){
+            
+                return combi + 1;
+                
+            }
+            
+            return combi;
+        
+        }
+    
+            return combi;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -161,6 +230,10 @@ public class EjerciciosBasicosJava {
         EjerciciosBasicosJava ejercicioMovil = new EjerciciosBasicosJava();
         EjerciciosBasicosJava ejercicioDiff10 = new EjerciciosBasicosJava();
         EjerciciosBasicosJava ejercicioDigits = new EjerciciosBasicosJava();
+        EjerciciosBasicosJava ejercicioMultiplo35 = new EjerciciosBasicosJava();
+        EjerciciosBasicosJava ejercicioMultiplo20 = new EjerciciosBasicosJava();
+        EjerciciosBasicosJava ejercicioLoteria = new EjerciciosBasicosJava();
+        EjerciciosBasicosJava ejercicioSuma = new EjerciciosBasicosJava();
         
        System.out.println(ejercicioArdilla.ardillas(50, false));
        System.out.println(ejercicioMulta.multa(65, false));
@@ -168,7 +241,10 @@ public class EjerciciosBasicosJava {
        System.out.println(ejercicioMovil.movil(false, true, true));
        System.out.println(ejercicioDiff10.diff10(22, 13, 6));
        System.out.println(ejercicioDigits.digits(12, 23));
-       
+       System.out.println(ejercicioMultiplo35.multiplo35(10));
+       System.out.println(ejercicioMultiplo20.multiplo20(38));
+       System.out.println(ejercicioLoteria.loteria(1, 1, 0));
+       System.out.println(ejercicioSuma.suma(4, 4, false));
     }
     
 }
