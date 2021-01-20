@@ -5,6 +5,8 @@
  */
 package ejerciciosbasicosjava;
 
+import java.util.Arrays;
+
 /**
  *
  * @author GreenDawn2 v4
@@ -217,6 +219,41 @@ public class EjerciciosBasicosJava {
             return combi;
     }
     
+    public int[] maximos(int[] array){
+        
+        int largo = array.length;
+        
+        
+        if(largo >= 2){
+            
+            int comparador1 = array[0];
+            int comparador2 = array[0];
+            
+            
+            for(int i = 0; i < largo; i++){
+
+                if(array[i] > comparador1){
+
+                    comparador1 = array[i];
+
+                }
+
+                if(array[i] > comparador2 && array[i] < comparador1){
+
+                    comparador2 = array[i];
+
+                }
+
+            }
+
+            int[] resultado = {comparador1, comparador2};
+            
+            return resultado;
+        }
+        
+        return array;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -234,6 +271,12 @@ public class EjerciciosBasicosJava {
         EjerciciosBasicosJava ejercicioMultiplo20 = new EjerciciosBasicosJava();
         EjerciciosBasicosJava ejercicioLoteria = new EjerciciosBasicosJava();
         EjerciciosBasicosJava ejercicioSuma = new EjerciciosBasicosJava();
+        EjerciciosBasicosJava ejercicioMaximos = new EjerciciosBasicosJava();
+        
+        //arrays
+        
+        int[] array = {40, 20, 30 ,10, 99};
+        
         
        System.out.println(ejercicioArdilla.ardillas(50, false));
        System.out.println(ejercicioMulta.multa(65, false));
@@ -245,6 +288,8 @@ public class EjerciciosBasicosJava {
        System.out.println(ejercicioMultiplo20.multiplo20(38));
        System.out.println(ejercicioLoteria.loteria(1, 1, 0));
        System.out.println(ejercicioSuma.suma(4, 4, false));
+       System.out.println(Arrays.toString(ejercicioMaximos.maximos(array)));
+       
     }
     
 }
