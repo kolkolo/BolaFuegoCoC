@@ -70,13 +70,37 @@ public class JavaApplication5 {
         }
     }
     
+    
+    public boolean isograma(String str){
+    
+        int largo = str.length();
+        int indexMax = largo - 1;
+        
+        for (int i = 0; i < largo; i ++){
+        
+                    for (int x = indexMax; x > i;x --){
+        
+                        if(str.charAt(i) == str.charAt(x)){
+                            
+                            return false;
+                            
+                        }
+        
+                    }
+        
+        }
+        
+        
+        return true;
+    }
+    
     public static void main(String[] args) {
         // TODO code application logic here
         
-        JavaApplication5 pruebaPalindromo = new JavaApplication5();
+        JavaApplication5 pruebas = new JavaApplication5();
         
-        System.out.println(pruebaPalindromo.palindromo("ACASO HUBO BUHOS ACA"));
-        
+        System.out.println(pruebas.palindromo("ACASO HUBO BUHOS ACA"));
+        System.out.println(pruebas.isograma("qwertyuiop"));
     }
     
 }
