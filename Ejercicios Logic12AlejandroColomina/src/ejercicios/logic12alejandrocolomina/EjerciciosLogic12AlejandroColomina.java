@@ -15,15 +15,20 @@ public class EjerciciosLogic12AlejandroColomina {
     
     //Logic 1 ejercicios
     
-    //Ejercicio 1.1
+    //Ejercicio 1.1 comentado
     
     public boolean cigarParty(int cigars, boolean isWeekend) {
 
+        //comprobamos si es finde semana, y si tenemos el minimo necesario
+        
         if (isWeekend && cigars >= 40){
 
             return true;
 
         }
+        
+        //Si al llegar aqui significa que no es fin de semana o no teniamos el minimo, si no tenia el minimo ira directo al false
+        //Comprobamos la cantidad par ver si esta entre las que son validas para entre semana
         if (cigars >= 40 && cigars <= 60){
 
             return true;
@@ -34,13 +39,14 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
     
-    //Ejercicio 1.2
+    //Ejercicio 1.2 comentado
     
     public int dateFashion(int you, int date) {
   
-  
+        //Comprobamos que o nosotros o nuestra cita tengamos un 8 o mas
         if(you >= 8 || date >= 8){
-
+            
+          //Ahora eliminamos el caso de que la otra persona sea un 2 o menos
           if(you <= 2 || date <= 2){
 
             return 0;
@@ -52,7 +58,7 @@ public class EjerciciosLogic12AlejandroColomina {
           }
 
         } else {
-
+            //Esto se ejecuta si ninguno somos un 8, de nuevo comprobamos que ninguno sea un dos
            if(you <= 2 || date <= 2){
 
             return 0;
@@ -66,12 +72,13 @@ public class EjerciciosLogic12AlejandroColomina {
         }
      }
     
-    //Ejercicio 1.3
+    //Ejercicio 1.3 comentado
     
     public boolean squirrelPlay(int temp, boolean isSummer) {
 
-        if(isSummer == true){
-
+        //Empezamos con el booleano
+        if(isSummer){
+            //Comprobamos las temperaturas en caso de verano y damos true o false segun proceda
           if(temp >= 60 && temp <= 100){
 
             return true;
@@ -83,7 +90,9 @@ public class EjerciciosLogic12AlejandroColomina {
           }
 
         } else {
-
+            
+          //Comprobamos al temperatura en caso de que no sea verano
+          
           if(temp >= 60 && temp <= 90){
 
             return true;
@@ -98,15 +107,18 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
     
-    //Ejercicio 1.4
+    //Ejercicio 1.4 comentado
     
     public int caughtSpeeding(int speed, boolean isBirthday) {
   
+        //Definimos los valores de velocida dpara las multas
         int minTick = 61;
         int minBigTick = 81;
 
+        //Comp`robamos que NO es nuestro cumpleaños
         if(isBirthday == false){
 
+          //Comprobamos la velocidad para definir la multa en no cumpleaños
           if(speed < minTick){
 
             return 0;
@@ -123,6 +135,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
         } else {
 
+          //Comp`robamos lso valores añadiendo los 5 por ser cumpleaños, para definir la multa en caso de cumpleaños
           if(speed < minTick + 5){
 
             return 0;
@@ -142,12 +155,14 @@ public class EjerciciosLogic12AlejandroColomina {
   
 }
 
-    //Ejercicio 1.5
+    //Ejercicio 1.5 comentado
     
     public int sortaSum(int a, int b) {
   
+        //Realizamos la suma
         int sum = a + b;
 
+        //Comprobamos si esta entre los valroes indicados
         if(sum >= 10 && sum <= 19){
 
           return 20;
@@ -159,12 +174,14 @@ public class EjerciciosLogic12AlejandroColomina {
         }
     }
 
-    //Ejercicio 1.6
+    //Ejercicio 1.6 comentado
     
     public String alarmClock(int day, boolean vacation) {
   
+        //Primero vemos si estamos de vacaciones
         if(vacation == true){
 
+          //Comprobamos que dia es y asignamos la hora adecuada para ese dia en vacaciones
           if(day >= 1 && day <= 5){
 
             return "10:00";
@@ -178,6 +195,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
         } else {
 
+          //Comprobamos el dia y asignamos la hora en dia de no vacaciones 
           if(day >= 1 && day <= 5){
 
             return "7:00";
@@ -192,13 +210,15 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.7
+    //Ejercicio 1.7 comentado
     
     public boolean love6(int a, int b) {
 
+        //Definimos la suma, y la resta en valor absoluto
         int sum = a + b;
         int rest = Math.abs(a - b);
 
+        //Comprobamos que cualquiera de los 4 valores solicitados sea 6
         if (a == 6 || b == 6 || sum == 6 || rest == 6){
 
           return true;
@@ -211,12 +231,14 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.8
+    //Ejercicio 1.8 comentado
     
     public boolean in1To10(int n, boolean outsideMode) {
   
+        //Comprobamos el boolean dado
         if (outsideMode == true){
 
+          //Chequeamos que el valor no esta en el rangod e 1 a 10
           if(n <= 1 || n >= 10){
 
             return true;
@@ -229,6 +251,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
         } else {
 
+          //Como aqui estamos en inside mode, comprobamosn que si este en el rando de 1 a 10
           if(n >= 1 && n <= 10){
 
             return true;
@@ -244,13 +267,15 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.9
+    //Ejercicio 1.9 comentado
     
     public boolean specialEleven(int n) {
   
+        //Hacemos una variable con el rasto de n y de n -1
         int res = n % 11;
         int resMen = (n - 1) % 11;
 
+        //Devolvemos true si cualquiera de los dos es 0
         if(res == 0 || resMen == 0){
 
           return true;
@@ -263,13 +288,16 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio1.10
+    //Ejercicio1.10 comentado
     
     public boolean more20(int n) {
   
+        //Definimos las variables del resto de 20, quitando 1 o 2
         int menosUno = (n % 20) - 1;
         int menosDos = (n % 20) - 2;
 
+        
+        //Aqui comprobamos si cualquiera de esos restos es 0, esto podria haberse hecho igual comprobando que menosUno fuese 1 y menosDos fuese 2
         if(menosUno == 0 || menosDos == 0){
 
           return true;
@@ -282,15 +310,18 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.11
+    //Ejercicio 1.11 comentado
     
     public boolean old35(int n) {
   
+        //Comprobamos los restos del numero entre 3 y entre 5
         int mTres = n % 3;
         int mCinco = n % 5;
 
+        //Si cualquiera es 0, entramos en el if
         if(mTres == 0 || mCinco == 0){
 
+          //Si ambos son 0, entramos aqui
           if(mTres == 0 && mCinco == 0){
 
             return false;
@@ -303,7 +334,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
 
         } else {
-
+          //En casod e que ninguno sea 0
           return false;
 
         }
@@ -311,13 +342,15 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.12
+    //Ejercicio 1.12 comentado
     
     public boolean less20(int n) {
   
+        //Comprobamos que los numeros, sumando 1 o 2, sean multiplo de 20
         int menosUno = (n + 1) % 20;
         int menosDos = (n + 2) % 20;
 
+        //Si caulquiera de los es multiplo de 20, devolvemos true
         if(menosUno == 0 || menosDos == 0){
 
           return true;
@@ -331,14 +364,15 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.13
+    //Ejercicio 1.13 comentado
     
     public boolean nearTen(int num) {
   
+        //Definimos un for que va cambiando el valor que le restamos a 10 para comprobar los valores necesarios
         for(int i = -2; i < 3; i++){
 
           int restado = (num - i) % 10;
-
+          //Si alguno es 0, quiere decir que cum`ple los requisitos
           if(restado == 0){
 
             return true;
@@ -351,12 +385,14 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.14
+    //Ejercicio 1.14 comentado
     
     public int teenSum(int a, int b) {
   
+        //Sumamos los valores
         int sum = a + b;
 
+        //Comprobamos si uno de los dos se haya en los valores especificados
         if( a >= 13 && a <= 19 || b >= 13 && b <= 19){
 
           return 19;
@@ -369,16 +405,17 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.15
+    //Ejercicio 1.15 comentado
     
     public boolean answerCell(boolean isMorning, boolean isMom, boolean isAsleep) {
   
+        //Empezamos comprobando si estamos dormidos ya que eso elimina todo
         if(isAsleep){
 
           return false;
 
         } else {
-
+          //Ahora comprobamos que sea mañana, en cuyo caso solo contestamos a nuestra madre
           if(isMorning){
 
             if(isMom){
@@ -403,19 +440,22 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.16
+    //Ejercicio 1.16 comentado
     
     public int teaParty(int tea, int candy) {
   
+        //Comprobamos la relacion de caramelos te y viceversa
         double teaCan = tea / candy;
         double canTea= candy / tea;
 
+        //Comprobamos que ambas lleguen al minimo
         if(tea < 5 || candy < 5){
 
           return 0;
 
         } else {
-
+          
+          //Comprobamos si alguna es la cantidad idonea
           if(canTea >= 2 || teaCan >= 2){
 
             return 2;
@@ -430,20 +470,25 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.17
+    //Ejercicio 1.17 comentado
     
     public String fizzString(String str) {
+        
+        //Guardamos el alrgo en una int y hacemos dos sub strings, una con la primera lera y otra con la ultima
         int largo = str.length();
         String primero = str.substring(0,1);
         String ultimo = str.substring(largo - 1, largo);
 
+        //Comprobamos en un boolean si las letras encajan con als que se piden
         boolean f = primero.matches("f");
         boolean b = ultimo.matches("b");
 
+        //Si se cumplen ambas, devolvemos el mensaje indicado
         if( f == true && b == true){
 
           return "FizzBuzz";
 
+          //Si solo una encaja, devolvemos los mensajes correspondientes
         } else if(f == true && b == false){
 
           return "Fizz";
@@ -454,6 +499,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
         } else {
 
+            //Si ninguna encaja, devolvemos el string inalterado
           return str;
 
         }
@@ -461,12 +507,15 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.18
+    //Ejercicio 1.18 comentado
     
     public String fizzString2(int n) {
+        
+        //Comprobamos si los numeros son multiplo de 3 o 5
         int div3 = n % 3;
         int div5 = n % 5;
 
+        //Misma dinamica que el anterior, un mensaje si ambos son, dos mensajes por si es cada uno y un mensaje si no es ninguno
         if(div3 == 0 && div5 == 0){
 
             return "FizzBuzz!";
@@ -489,13 +538,16 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.19
+    //Ejercicio 1.19 comentado
     
     public boolean twoAsOne(int a, int b, int c) {
+        
+        //Almaccenamos las sumas en 3 variables
         int sumaAB = a+ b;
         int sumaBC = b + c;
         int sumaAC = a + c;
 
+        //Comprobamos que cualquiera de las sumas sea igual al numero restante
         if(sumaAB == c || sumaAC == b || sumaBC == a){
 
           return true;
@@ -506,12 +558,13 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.20
+    //Ejercicio 1.20 comentadow
     
     public boolean inOrder(int a, int b, int c, boolean bOk) {
   
+        //Comprobamos el booleano 
         if(bOk){
-
+          //Si es true, comprobamos que c sea mayor que b
           if(c > b){
 
             return true;
@@ -521,7 +574,7 @@ public class EjerciciosLogic12AlejandroColomina {
           return false;
 
         }
-
+        //Si no es true, comprobamos que c sea mas que b y b que a
         if(c > b && b > a){
 
           return true;
