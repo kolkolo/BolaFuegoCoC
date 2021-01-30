@@ -558,7 +558,7 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
 
-    //Ejercicio 1.20 comentadow
+    //Ejercicio 1.20 comentado
     
     public boolean inOrder(int a, int b, int c, boolean bOk) {
   
@@ -585,12 +585,13 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.21
+    //Ejercicio 1.21 comentado
     
     public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
   
+        //Primero comprobamos el booleano
         if(equalOk){
-
+           //Hacemos las comprobaciones para que se cumplan las condiciones con booleano true
           if(c >= b && b >= a){
 
             return true;
@@ -600,7 +601,7 @@ public class EjerciciosLogic12AlejandroColomina {
           return false;
 
         }
-
+          //Hacemos las comprobaciones con el booleano false
           if(c > b && b > a){
 
             return true;
@@ -611,27 +612,28 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.22
+    //Ejercicio 1.22 comentado
     
     public int numFin(int n){
 
+          //Si el numero es mayor a 10, devolvemos elr esto de dividirlo entre 10
           if(n >= 10){
 
             return n % 10;
 
           }
-
+          //Si no devolvemos el numero
             return n;
 
     }
 
 
     public boolean lastDigit(int a, int b, int c) {
-
+          //Pasamos los 3 numeros por la funcion que nos devuelve el numero que tienen en las unidades
           int numA = numFin(a);
           int numB = numFin(b);
           int numC = numFin(c);
-
+          //Comparamos las unidades para ver si alguna concide
           if(numA == numB || numB == numC || numA == numC){
 
             return true;
@@ -642,10 +644,10 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.23
+    //Ejercicio 1.23 comentado
     
     public boolean restar(int a, int b){
-  
+        //Creamos una funcion externa que comprueba si el absoluto de a - b es mayor que 10, en cuyo caso devuelve true
         if( Math.abs(a - b) >= 10){
 
           return true;
@@ -657,7 +659,7 @@ public class EjerciciosLogic12AlejandroColomina {
     }
 
     public boolean lessBy10(int a, int b, int c) {
-
+      //Comprobamos las 3 restas para ver si alguna cumple el booleano, en cuyo caso sera mayor que 10 la diferencia entre los numeros
       boolean AB = restar(a, b);
       boolean AC = restar(a, c);
       boolean BC = restar(b, c);
@@ -672,27 +674,27 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 1.24
+    //Ejercicio 1.24 comentado
     
     public int withoutDoubles(int die1, int die2, boolean noDoubles) {
-        
+        //Sumamos los dos dados
         int suma = die1 + die2;
-
+        //Comprobamos el booleano
         if(noDoubles){
-
+            //En caso de que sean iguales pero distintos de 6, devolvemos la suma + 1
           if(die1 == die2 && die1 != 6){
 
             return suma + 1;
 
           }
-
+          //Si son iguales y ademas son 6, devolvemos uno de los dados + 1
          if(die1 == die2 && die1 == 6){
 
             return die1 + 1;
 
           }
 
-
+         //En el resto de casos devolvemos la suma
            return suma;
 
         }
@@ -703,10 +705,10 @@ public class EjerciciosLogic12AlejandroColomina {
     }
 
     
-    //Ejercicio 1.25
+    //Ejercicio 1.25 comentado
     
     public int[] ordenadosMasMenos(int a, int b){
-  
+        //Creamos una funcion que ordena ambos numeros en un array de tamaño dos y lo devuelve
         int[] array = {0, 0};
 
         if(a > b){
@@ -731,90 +733,90 @@ public class EjerciciosLogic12AlejandroColomina {
       }
 
     public int maxMod5(int a, int b) {
-  
+       //Pasamos los numeros a la funcion que hemos creado
     int[] masMenos = ordenadosMasMenos(a, b);
-
+    //Almacenamos el resto al dividirlos entre 5
     int aDiv5 = a % 5;
     int bDiv5 = b % 5;
 
 
-
+    //Si son iguales, devolvemos 0
     if(a == b){
 
       return 0;
 
     }
-
+    //Si ambos comparten resto al dividirlos por 5, devolvemos el menor
     if(aDiv5 == bDiv5){
 
       return masMenos[1];
 
     }
-
+    //Si no, devolvemos el mayor
       return masMenos[0];
 
   }
     
-    //Ejercicio 1.26
+    //Ejercicio 1.26 comentado
     
     public int redTicket(int a, int b, int c) {
-  
+        //Comprobamos si todos son iguales y valen 2
         if(a == b && b == c && a == 2){
 
           return 10;
 
         }
-
+        //Comprobamos si son iguales, pero habiendo visto que no son 2
         if(a == b && b == c){
 
           return 5;
 
         }
-
+        //Comprobamos si b y c son distintos de a
         if(a != b && a!= c){
 
           return 1;
 
         }
-
+        //Resto de casos
           return 0;
 
       }
     
-    //Ejercicio 1.27
+    //Ejercicio 1.27 comentado
     
     public int greenTicket(int a, int b, int c) {
-  
+        //Comprobamos que todos son distintos
         if(a != b && b != c && a  != c){
 
           return 0;
 
         }
-
+        //Comprobamos que sean iguales
         if(a == b && b ==c){
 
           return 20;
 
         }
-
+        //Comprobamos que dos sean iguales
         if(a == b || b == c || a == c){
 
           return 10;
 
         }
 
-
+        //Resto de casos
         return 0;
 
       }
 
-    //Ejercicio 1.28
+    //Ejercicio 1.28 comentado
     
 
     public boolean diezMas(int a, int b){
-
+           //Devolcemos el valor absoluto de la resta de ambos numeros
           int dif = Math.abs(a - b);
-
+          //Comprobamos si es mayor de diez
           if(dif >= 10){
 
             return true;
@@ -826,36 +828,36 @@ public class EjerciciosLogic12AlejandroColomina {
         }
 
     public int blueTicket(int a, int b, int c) {
-
+          //Almacenamos las 3 sumas
           int ab = a + b;
           int bc = b + c;
           int ac = a + c;
-
+          //Comprobamos si alguna de las sumas tiene una diferencia de 10 o mas pasandolas por la funcion que hemos creado
           boolean difAbBc = diezMas(ab, bc);
           boolean difAbAc = diezMas(ab, ac);
           boolean difBcAc = diezMas(ac, bc);
-
+          //Si cualquiera de las sumas es 10, devolvemos 10
           if(ab == 10 || bc == 10 || ac == 10){
 
             return 10;
 
           }
-
+          //Si cualquiera de las sumas tiene 10 o mas de diferencia, devolvemos 5
           if(difAbBc || difAbAc || difBcAc){
 
             return 5;
 
           }
-
+          //Resto de casos
             return 0;
 
         }
 
-    //Ejercicio 1.29
+    //Ejercicio 1.29 true
     
     
     public int[] digitDivider(int a){
-
+      //Creamos una funcion que devuelve un numero con decenas y unidades en un array de tamaño dos donde va primero las decenas y luego las unidades
       int[] array = {0, 0};
 
       int uno = a / 10;
@@ -869,38 +871,38 @@ public class EjerciciosLogic12AlejandroColomina {
     }
 
     public boolean shareDigit(int a, int b) {
-
+      //Pasamos ambos numeros a nuestra funcion para dividir sus numeros
       int[] aDivid = digitDivider(a);
       int[] bDivid = digitDivider(b);
-
+      //Comprobamos que cualquiera de las unidades o decenas coincida entre los dos numeros, y de ser asi devolvemos true
       if(aDivid[0] == bDivid[0] || aDivid[1] == bDivid[0] || aDivid[0] == bDivid[1] || aDivid[1] == bDivid[1]){
 
         return true;
 
       }
-
+      //Si no, devolvemos false
         return false;
 
     }
 
-    //Ejercicio 1.30
+    //Ejercicio 1.30 comentado
     
     public int sumLimit(int a, int b) {
-
+        //Almacenamos la suma de los dos numeros
         int suma = a + b;
-
+        //Almacenamos como strings a y la suma
         String aLetra = String.valueOf(a);
         String sumaLetra = String.valueOf(suma);
-
+        //Almacenamos la longitud de a y de la suma
         int largoA = aLetra.length();
         int largoSuma = sumaLetra.length();
-
+        //Si esta longitud es iguale en ambos, devolvemos la suma
         if(largoA == largoSuma){
 
           return suma;
 
         }
-
+        //Si no, devolvemos a
           return a;
 
       }
@@ -908,59 +910,65 @@ public class EjerciciosLogic12AlejandroColomina {
     
     //Logic 2 ejercicios
     
-    //Ejercicio 2.1
+    //Ejercicio 2.1 comentado
     
     public boolean makeBricks(int small, int big, int goal) {
   
+        //Este me lie bastante, pero luego lo hice mejor en el del chocolate
+        
+        //Almacenas el valor de las grandes, la cantidad que tenemos, el valor de las pequeñas, la cantidad que tenemos y la suma de los valores.
         int valorGrande = big * 5;
         int cantidadDeBig = big;
         int valorSmol = small * 1;
         int cantidadDeSmol = small;
         int sumaValores = valorGrande + valorSmol;
-
+        // Vemos si el objetivo es mayor que las grandes
         if(goal > valorGrande){
-
+           //Si la suma de pequeñas y grandes es mayor que el objetivo, podremos hacerlo
           if(sumaValores >= goal){
 
             return true;
 
           } else {
-
+           //Si no es que faltan pequeñas
             return false;
 
           }
-
+          //En caso de que sea igual, ni necesitamos contar las pequeñas
         } else if (goal == valorGrande){
 
           return true;
 
         } else {
-
+          //Vamos a comprobar si podemos udsando grandes de menos, primero, metemos un booleano llamado alguna valida, que sera true si podemos
           boolean algunaValida = false;
+          //Abrimos un for igual al numero de grandes, que va bajando cada vuelta hasta ser 0
           for(int i = big; i >= 0; i--){
+            //Vamos restando una a la cantidad de grande que tenemos
             cantidadDeBig = cantidadDeBig - 1;
             int valorCantidadDeBig = cantidadDeBig * 5;
-
+            //Multiplicamos la nueva cantidad por el tamaño de las grandes y comprobamos si es menor o igual que el goal
             if (valorCantidadDeBig <= goal){
-
+              // Si es menor y sumandole las pequeñas supera o iguala el goal, es que podemos hacerla, y hacemos true alguna valida
               if(valorCantidadDeBig + valorSmol >= goal){
 
                 algunaValida = true;
 
               } 
+              //Tambien hacemos verdadera alguna valida si la neuva cantidad de grandes es igual al goal
             } else if(valorCantidadDeBig == goal){
 
               algunaValida = true;
 
             }
           }
-
+          //En caso de que alguna valida sea true,devolvemos true
           if(algunaValida){
 
             return true;
 
           } else {
-
+          //Si no, es que no se podia
             return false;
 
           }
@@ -970,16 +978,16 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
     
-    //Ejercicio 2.2
+    //Ejercicio 2.2 comentado
     
     public int loneSum(int a, int b, int c) {
-  
+        // Sumamos los tres valores
         int suma = a + b + c;
-
+        //Si los tres son iguales, devolvemos 0
         if(a == b && b == c){
 
           return 0;
-
+        //Si solo dos son iguales,d evolvemos el otro
         } else if( a == b){
 
           return c;
@@ -993,7 +1001,7 @@ public class EjerciciosLogic12AlejandroColomina {
           return b;
 
         } else {
-
+        //Si no, devolvemos la suma
           return suma;
 
         }
@@ -1001,32 +1009,32 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
 
-    //Ejercicio 2.3
+    //Ejercicio 2.3 comentado
     
     public int luckySum(int a, int b, int c) {
- 
+        //Almacenamos la suma
         int suma = a + b +c;
-
+        //Si cualquiera de los valores es 13, los comprobamos
         if(a == 13 || b == 13 || c == 13){
-
+          //Si a es 13, devolvemos 0
           if(a == 13){
 
             return 0;
 
           }
-
+          //Si b es 13, devolvemos a
           if(b == 13){
 
             return a;
 
           }
-
+          //Si c es 13, devolvemos a + b
           if(c == 13){
 
             return a + b;
 
           }
-
+          //Resto de casos, devolvemos suma
          }else {
 
           return suma;
@@ -1037,10 +1045,10 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
     
-    //Ejercicio 2.4
+    //Ejercicio 2.4 comentado
     
     public int fixTeen(int n){
-
+        //Creamos una funcion que coje un numero y comprueba si esta entre 13 y 19, y si es asi y no es 15 ni 16, devuelve 0, y si es 15 o 16 devuelve ese numero
       if(n >= 13 && n <= 19){
 
         if(n == 15 || n == 16){
@@ -1058,19 +1066,19 @@ public class EjerciciosLogic12AlejandroColomina {
     }
 
     public int noTeenSum(int a, int b, int c) {
-
+        //Pasamos los tres numeros por la funcion para que sean el valor que queremos
       int aTeen = fixTeen(a);
       int bTeen = fixTeen(b);
       int cTeen = fixTeen(c);
-
+      //Devolvemos la suma de los 3 numeros ajustados
       return aTeen + bTeen + cTeen;
 
     }
 
-    //Ejercicio 2.5
+    //Ejercicio 2.5 comentado
     
     public int round10(int n){
-
+       //Hacemos una funcion externa que separa las decenes de la sunidades, y segun las unidades, redondea
       int numeroPrimero = n / 10;
       int numeroSegundo = n % 10;
 
@@ -1087,7 +1095,7 @@ public class EjerciciosLogic12AlejandroColomina {
     }
 
     public int roundSum(int a, int b, int c) {
-
+       //Redondeamos los 3 nuemros y devolvemos sus suma
       int aRounded = round10(a);
       int bRounded = round10(b);
       int cRounded = round10(c);
@@ -1096,14 +1104,14 @@ public class EjerciciosLogic12AlejandroColomina {
       return aRounded + bRounded + cRounded;
     }
 
-    //Ejercicio 2.6
+    //Ejercicio 2.6 comentado
     
     public boolean closeFar(int a, int b, int c) {
-
+     //Almacenanos el valor absoluto de la diferencia de los 3 valores
      int ab = Math.abs(a - b);
      int bc = Math.abs(c - b);
      int ac = Math.abs(a - c);
-
+     //Si la diferencia de a hacia b o c es 1 o menos y los demas tienen dos o mas de separacion, devolvemos true
       if(ab <= 1 && ac >= 2 && bc >= 2){
 
         return true;
@@ -1120,10 +1128,10 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 2.7
+    //Ejercicio 2.7 comentado
     
     public int noNegatives(int n){
-
+        //Pasamos los numeros a esta funcion que devuelve 1000 si son negativos
         if (n < 0){
 
           return 1000;
@@ -1135,18 +1143,18 @@ public class EjerciciosLogic12AlejandroColomina {
       }
 
     public int blackjack(int a, int b) {
-
+        //Almacenamos la resta de nuestros numero s a 21, y luego los pasamos por no negative para eliminar valores negativos
         int a21 = 21 - a;
         int b21 = 21 - b;
         int aNoNeg = noNegatives(a21);
         int bNoNeg = noNegatives(b21);
-
+        //Si los dos son menores que 0,devolvemos 0
         if(a21 < 0 && b21 < 0){
 
           return 0;
 
         }
-
+        //Miramos cual de los dos es menor tras pasar por no neg, que de ser negativos los habria vuelto 1000, y devolvemos el menor
         if(aNoNeg < bNoNeg){
 
           return a;
@@ -1163,10 +1171,10 @@ public class EjerciciosLogic12AlejandroColomina {
 
       }
     
-    //Ejercicio 2.8
+    //Ejercicio 2.8 comentado
     
     public int[] ordenante(int a, int b, int c){
-
+        //Creamos una funcion externa que recibe tres numeros y los guarda de mayor a menor en un array tamaño 3 el cual devuelve
     int[] array = {0, 0, 0};
 
     if(a > b && a > c){
@@ -1278,12 +1286,12 @@ public class EjerciciosLogic12AlejandroColomina {
   }
 
     public boolean evenlySpaced(int a, int b, int c) {
-
+        //Metemos los tres numeros en la funcion para ordenarlos en un array
       int[] ordenados = ordenante(a, b, c);
-
+      //Almacenamos el valor absoluto de la diferencia entre el mayor y el mediano, y el mediano y el menor
       int distBigMed = Math.abs(ordenados[0] - ordenados[1]);
       int distMedSmol = Math.abs(ordenados[1] - ordenados[2]);
-
+      //Devolvemos true si estas distancias son iguales
       if(distBigMed == distMedSmol){
 
         return true;
@@ -1294,46 +1302,47 @@ public class EjerciciosLogic12AlejandroColomina {
 
     }
     
-    //Ejercicio 2.9
+    //Ejercicio 2.9 comentado
     
     public int makeChocolate(int small, int big, int goal) {
-  
+        //El mismo que el 2.1, pero aqui ha quedado mejor
+        //Almacenamos el peso de las grandes, cuanto faltaria con las grandes para llegar al objetivo, y el peso de las pequeñas
         int pesoGrandes = big * 5;
         int faltanGoal = goal - pesoGrandes;
         int pesoPequeñas = small;
 
 
-
+        //Si es menor que 0, tenemos mas grandes que objetivo
         if(faltanGoal < 0){
-
+           //Sacamos el resto de el objetivo entre las grandes para saber cuantas pequeñas nos harian falta
           int pequesNecesarias = goal % 5;
-
+          //Si las necesarias son menos o als mismas que las que tenemos, devolvemos ese valor
           if(pequesNecesarias <= small){
 
             return pequesNecesarias;
 
           }
-
+          //Si no, devolvemos  -1
             return -1;
 
         }
-
+        //En este caso, incluso con las grandes aun falta
         if(faltanGoal > 0){
-
+          //Restamos las que nos faltan a las que tenemos
           int necesarias = pesoPequeñas - faltanGoal;
-
+          //Si es 0, tenemos justas
           if(necesarias == 0){
 
             return small;
 
           }
-
+          //Si no, devolvemos -1
           if(necesarias < 0){
 
             return -1;
 
           }
-
+          
           return faltanGoal;
 
         }
